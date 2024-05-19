@@ -1,0 +1,12 @@
+#landing{
+    background-image:url('../../assets/landing_bg.WEBP');
+    background-repeat:no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding:32px;
+}
+
+#logo{
+    max-width: 200px;
+}
