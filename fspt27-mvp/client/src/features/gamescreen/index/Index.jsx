@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import SinglePokemon from "./SinglePokemon";
 import PokemonList from "./PokemonList";
 import Menu from "../../../components/Menu";
-// import "./Index.css";
+import axios from "axios";
+import "./index.css";
 
 function Index() {
     const [selectedPokemon, setSelectedPokemon] = useState(null);
@@ -11,44 +12,45 @@ function Index() {
     useEffect(() => {
       fetchPokemon();
     }, [])
-  
-    const fetchPokemon = async () => { 
-        try{
-          const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=386');
-          const data = await response.json();
-          const pokemonResults = data.results;
-          
-          const singlePokemon = await Promise.all(
-            pokemonResults.map(async (pokemon) => {
-              const pokemonResponse = await fetch(pokemon.url)
-              const pokemonData = await pokemonResponse.json();
-              const types = pokemonData.types.map(pokemon => pokemon.type.name)
-              return{
-                id: pokemonData.id,
-                name: pokemon.name,
-                image: pokemonData.sprites.front_default,
-                types: types
-              };
-            })
-          );
-  
-          const grassPokemon = singlePokemon.filter((pokemon) => pokemon.types.includes('grass'));
-          setPokemonList(grassPokemon);
-  
-        } catch (error) {
-          console.error('Error fetching Pokémon:', error);
+    
+    async function fetchPokemon(){
+      try {
+        const response = await axios.get('/api/cozygarden')
+        setPokemonList(response.data);
+      } catch (error) {
+        if(error.response){
+          console.log(`Server Error: ${error.response.status}, ${error.response.statusText}`);
+          console.log("Server Error Message:", error.response.data.error);
+        } else if (error.request) {
+          console.log("Network Error:", error.message);
+        } else {
+          console.log("Error:", error.message);
         }
-      };
+          console.log(`Network Error: ${error.message}`);
+      }
+    }
 
-    // I think this can be combined into one function! 
-  const handlePokemonClick = (pokemon) => {
-    setSelectedPokemon(pokemon);
-  };
+    const fetchSinglePokemon = async (id) => { 
+        try{
+          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+          console.log(response.data)
+          setSelectedPokemon(response.data);
+        } catch (error) {
+          if(error.response){
+            console.log(`Server Error: ${error.response.status}, ${error.response.statusText}`);
+            console.log("Server Error Message:", error.response.data.error);
+          } else if (error.request) {
+            console.log("Network Error:", error.message);
+          } else {
+            console.log("Error:", error.message);
+          }
+            console.log(`Network Error: ${error.message}`);        
+          }
+      };
 
   const handleOverviewClick = () => {
     setSelectedPokemon(null);
   };
-  // End possible combined function
   
     return (
       <div>
@@ -56,7 +58,7 @@ function Index() {
         {selectedPokemon ? (
         <SinglePokemon pokemon={selectedPokemon} onOverviewClick={handleOverviewClick}/>
       ) : (
-        <PokemonList pokemonList={pokemonList} onPokemonClick={handlePokemonClick} />
+        <PokemonList pokemonList={pokemonList} fetchSinglePokemonCb={fetchSinglePokemon}  />
       )}
       </div>
     );

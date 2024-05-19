@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import "./Menu.css";
 
 function Menu() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
 
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
   
+    const isActive = (path) => {
+      return location.pathname === path;
+    };
+
     return (
       <div className="menu-container">
        <header className="menu-header">
@@ -20,8 +25,12 @@ function Menu() {
       {isMenuOpen && (
           <div className="menu">
             <ul>
-              <li><Link to='/overview'>Home</Link></li>
-              <li><Link to='/index'>Index</Link></li>
+            <li className={isActive('/overview') ? 'inactive' : ''}>
+                <Link to="/overview">Home</Link>
+              </li>
+              <li className={isActive('/index') ? 'inactive' : ''}>
+                <Link to="/index">Index</Link>
+              </li>
             </ul>
           </div>
         )}

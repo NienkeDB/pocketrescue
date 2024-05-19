@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "migrate": "node model/database.js"
+    "migrate": "node model/database.js",
+    "import-pokemon": "node model/importPokemon.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

@@ -12,9 +12,8 @@ SET foreign_key_checks = 1;
 
 CREATE TABLE pokemon(
     main_id INT NOT NULL AUTO_INCREMENT, 
-    api_id INT NOT NULL,
+    pokemon_id INT NOT NULL,
     name VARCHAR(255) NOT NULL, 
-    image_url VARCHAR(255),
-    types VARCHAR(255),
-    PRIMARY KEY (main_id)
+    PRIMARY KEY (main_id),
+    UNIQUE KEY (pokemon_id)
     );

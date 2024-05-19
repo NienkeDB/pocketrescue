@@ -1,68 +1,127 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.index-subheader{
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  text-transform:capitalize;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+ul{
+  text-align:left;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+li{
+  list-style-type: none;
+  text-align:left;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#pokemon-list li{
+  text-transform:capitalize;
+}
+
+#pokemon-list li:hover{
+  font-weight:bold;
+}
+
+#single-pokemon img{
+  cursor:pointer;
+}
+
+#single-pokemon li{
+  border-radius:20px;
+  display:inline-block;
+  margin: 5px;
+  padding:4px 18px;
+  color:#fff;
+}
+
+#grass {
+  border: solid 1px #4e8234; /* Groen */
+  background-color: #9bcc50; /* Lichtgroen */
+}
+
+#normal {
+  border: solid 1px #a8a878; /* Grijs */
+  background-color: #c6c6a7; /* Lichtgrijs */
+}
+
+#fire {
+  border: solid 1px #f08030; /* Oranje */
+  background-color: #f5ac78; /* Lichtoranje */
+}
+
+#water {
+  border: solid 1px #6890f0; /* Blauw */
+  background-color: #9bb8d7; /* Lichtblauw */
+}
+
+#electric {
+  border: solid 1px #f8d030; /* Geel */
+  background-color: #f9d77c; /* Lichtgeel */
+}
+
+#ice {
+  border: solid 1px #98d8d8; /* Lichtblauw */
+  background-color: #bce6e6; /* IJsblauw */
+}
+
+#fighting {
+  border: solid 1px #c03028; /* Rood */
+  background-color: #d67873; /* Lichtrood */
+}
+
+#poison {
+  border: solid 1px #682a68; /* Paars */
+  background-color: #a040a0; /* Lichtpaars */
+}
+
+#ground {
+  border: solid 1px #e0c068; /* Bruin */
+  background-color: #ebd69d; /* Lichtbruin */
+}
+
+#flying {
+  border: solid 1px #a890f0; /* Paarsblauw */
+  background-color: #c9b8f5; /* Lichtpaarsblauw */
+}
+
+#psychic {
+  border: solid 1px #f85888; /* Roze */
+  background-color: #fa92b2; /* Lichtroze */
+}
+
+#bug {
+  border: solid 1px #a8b820; /* Groen */
+  background-color: #c6d16e; /* Lichtgroen */
+}
+
+#rock {
+  border: solid 1px #b8a038; /* Geelbruin */
+  background-color: #d1cc78; /* Lichtgeelbruin */
+}
+
+#ghost {
+  border: solid 1px #705898; /* Paars */
+  background-color: #a292bc; /* Lichtpaars */
+}
+
+#dragon {
+  border: solid 1px #7038f8; /* Donkerpaars */
+  background-color: #a27dff; /* Lichtpaars */
+}
+
+#dark {
+  border: solid 1px #705848; /* Donkergrijs */
+  background-color: #a29288; /* Lichtgrijs */
+}
+
+#steel {
+  border: solid 1px #b8b8d0; /* Grijsblauw */
+  background-color: #d1d1e0; /* Lichtgrijsblauw */
+}
+
+#fairy {
+  border: solid 1px #e79fe7; /* Roze */
+  background-color: #f5baff; /* Lichtroze */
 }

@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-// import "./PokemonList.css";
+import "./index.css";
 
-function PokemonList({pokemonList, onPokemonClick}){
+function PokemonList({fetchSinglePokemonCb, pokemonList}){
 
 return(
-    <div>
-        <h2>Pokémon List</h2>
-        <button><Link to="/overview">Back</Link></button>
+    <div id="pokemon-list">
+        <div className="index-subheader">
+            <h2>Pokémon List</h2>
+            <Link to="/overview"><button>Back</button></Link>
+        </div>
         <div id='pokedex'>
             {pokemonList.map((pokemon, index) => (
-            <ul className='pokemon' key={index} onClick={() => onPokemonClick(pokemon)}>
-                <li>{pokemon.id} | {pokemon.name}</li>
+            <ul className='pokemon' key={index} onClick={() => fetchSinglePokemonCb(pokemon.pokemon_id)}>
+                <li>{pokemon.pokemon_id} | {pokemon.name}</li>
             </ul>
             ))}
       </div>
