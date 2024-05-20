@@ -6,6 +6,7 @@ import PokemonStorage from './features/gamescreen/adoption/PokemonStorage';
 import './App.css';
 import CatchLanding from './features/gamescreen/game/CatchLanding';
 import Pokedex from './features/gamescreen/pokedex/Pokedex'
+import AdoptPokemon from './features/gamescreen/adoption/AdoptPokemon';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/pokedex" element={<Pokedex />} />
         <Route path="/storage" element={<PokemonStorage />} />
         <Route path="/catchlanding" element={<CatchLanding />} />
+        <Route path="/adopt" element={<AdoptPokemon />} />
       </Routes>
     </Router>
   );

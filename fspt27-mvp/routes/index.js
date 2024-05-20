@@ -15,15 +15,6 @@ router.get("/cozygarden", (req, res) => {
     .catch(e => res.status(500).send(e));
 });
 
-// //Catch one random Pokémon & update caught to +1
-// router.get("/cozygarden/random", (req, res) => {
-//   db("SELECT * FROM pokemon ORDER BY RAND() LIMIT 1;")
-//     .then(results => {
-//       res.send(results.data);
-//     })
-//     .catch(e => res.status(500).send(e));
-// });
-
 router.get('/cozygarden/random', async (req, res) => {
     try {
       const result = await db(
@@ -63,21 +54,24 @@ router.get('/cozygarden/:pokemon_id', async (req, res) => {
   }
 });
 
-
-
-
-
 router.put("/cozygarden/:pokemon_id", async (req, res) => {
   try {
+        const action = req.query.action;
         const result = await db(
           `SELECT * FROM pokemon WHERE pokemon_id = ${+req.params.pokemon_id}`
         );
         console.log(result);
-        if (result.data.length === 1) {
+        if (result.data.length === 1 && action === "increase") {
           sqlQuery = `UPDATE pokemon SET storage = storage + 1 WHERE pokemon_id = ${+req.params.pokemon_id}`;
           await db(sqlQuery);
           const results = await db(`SELECT * FROM pokemon WHERE pokemon_id = ${+req.params.pokemon_id}`);
           res.status(200).send(results.data);
+        }
+          else if (result.data.length === 1 && action === "decrease"){
+            sqlQuery = `UPDATE pokemon SET storage = storage - 1 WHERE pokemon_id = ${+req.params.pokemon_id}`;
+            await db(sqlQuery);
+            const results = await db(`SELECT * FROM pokemon WHERE pokemon_id = ${+req.params.pokemon_id}`);
+            res.status(200).send(results.data);          
         } else {
           res.status(404).send({ error: "Item Not Found!" });
         }
