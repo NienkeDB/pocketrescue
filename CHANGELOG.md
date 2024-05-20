@@ -1,5 +1,10 @@
 # Change Log
 * 20/05/2024
+    * Moved Random Pokemon function to separate component so it can be used in multiple components
+    * Added 'adopt' function
+    * Implemented useNavigate from React Router
+
+* 20/05/2024
     * Added function to auto update 'caught' when Pokémon gets caught
     * Added function to +1 the storage when pressing button after catching a Pokémon
     * Finished `2. Updating your inventory`

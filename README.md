@@ -20,25 +20,23 @@ A garden center (at least in the Netherlands) does have animals up for adoption 
     **Mechanic**<br />
     You can view the index of all Pokémon which are extracted from the pokeapi. You are also able to click on a Pokémon to view the details.<br /><br />
 
-2. Updating your inventory<br />
+2. Updating your inventory & Catching Pokémon<br />
     **Objective**<br />
     Seeing which Pokémon you have adopted and which (and how many) are available for adoption. <br /><br />
 
     **Mechanic**<br />
-    Without the catch-game implemented you are able to press the button 'Catch Pokémon' to get a random Pokémon that you can move to 'Inventory'. <br /><br />
+    Without the catch-game implemented you are able to press the button 'Catch Pokémon' to get a random Pokémon that you can move to 'Storage'. <br /><br />
 
 
-3. Catching Pokémon<br />
+3. Adopting Pokémon<br />
     **Objective**<br />
+    Taking in requests from customers who want to adopt a Pokémon.
     **Mechanic**<br />
-    This is done by playing a game similar to the classic 'Snake' game, but with adapted themes:<br /><br />
+    A random Pokémon is attached to the customer and it checks wether the 'storage' for that Pokémon !== 0. If available you can give away for adoption and the db gets updated, if not you can try again.
 
-    Player: The player is represented by a human figure.<br />
-    Playing Field: The playing field is a nature area.<br />
-    Goal/Food: Instead of traditional squares, you collect pokémon that are randomly distributed across the playing field and drawn from the database.<br /><br />
-
-    End of the Game<br />
-    When the game ends (game over), you receive a list of all the plants you have collected during the game. You can then choose to add these plants to your stock or place them in your personal collection.<br /><br />
+4. Designing the app<br />
+    After all the technical things are added, it is time to design the app accordingly.
+    
 
     # Future things
     * You will also be able to view all Pokémon in Personal Collection. In Inventory you will be able to see which ones you have caught and how many there are available.
