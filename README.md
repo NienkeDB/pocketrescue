@@ -13,29 +13,35 @@ You are the owner of a garden center. You can collect grass-type pokémon, handl
 ## Explanation
 A garden center (at least in the Netherlands) does have animals up for adoption so thinking about future updates to Cozy Garden I've decided to continue the garden center storyline. Looking at the timeline of only 2 weeks the main focus while building is as follows:
 
-1. Viewing all the Pokémon
-    **Objective**
-    As the owner of the garden center, you want to be able to see all the available Pokémon in the game and learn more about their characters.
+1. Viewing all the Pokémon [x]<br />
+    **Objective**<br />
+    As the owner of the garden center, you want to be able to see all the available Pokémon in the game and learn more about their characters.<br /><br />
 
-    **Mechanic**
-    You can view the index of all Pokémon which are extracted from the pokeapi. You are also able to click on a Pokémon to view the details.
+    **Mechanic**<br />
+    You can view the index of all Pokémon which are extracted from the pokeapi. You are also able to click on a Pokémon to view the details.<br /><br />
 
-2. Updating your inventory
-    **Objective**
-    Seeing which Pokémon you have adopted and which (and how many) are available for adoption. 
+2. Updating your inventory<br />
+    **Objective**<br />
+    Seeing which Pokémon you have adopted and which (and how many) are available for adoption. <br /><br />
 
-    **Mechanic**
-    Without the catch-functionality implemented you are able to press the button 'Catch Pokémon' to get a random Pokémon that you can either label 'Personal Collection' or 'Inventory'. You will also be able to view all Pokémon in Personal Collection. In Inventory you will be able to see which ones you have caught and how many there are available.
+    **Mechanic**<br />
+    Without the catch-game implemented you are able to press the button 'Catch Pokémon' to get a random Pokémon that you can move to 'Inventory'. <br /><br />
 
 
-3. Catching Pokémon
-    **Objective**
-    **Mechanic**
-    This is done by playing a game similar to the classic 'Snake' game, but with adapted themes:
+3. Catching Pokémon<br />
+    **Objective**<br />
+    **Mechanic**<br />
+    This is done by playing a game similar to the classic 'Snake' game, but with adapted themes:<br /><br />
 
-    Player: The player is represented by a human figure.
-    Playing Field: The playing field is a nature area.
-    Goal/Food: Instead of traditional squares, you collect pokémon that are randomly distributed across the playing field and drawn from the database.
+    Player: The player is represented by a human figure.<br />
+    Playing Field: The playing field is a nature area.<br />
+    Goal/Food: Instead of traditional squares, you collect pokémon that are randomly distributed across the playing field and drawn from the database.<br /><br />
 
-    End of the Game
-    When the game ends (game over), you receive a list of all the plants you have collected during the game. You can then choose to add these plants to your stock or place them in your personal collection.
+    End of the Game<br />
+    When the game ends (game over), you receive a list of all the plants you have collected during the game. You can then choose to add these plants to your stock or place them in your personal collection.<br /><br />
+
+    # Future things
+    * You will also be able to view all Pokémon in Personal Collection. In Inventory you will be able to see which ones you have caught and how many there are available.
+
+    ## Future improvements
+    * Update Single Pokemon view to one that can be referenced to at multiple points in the game. (maybe reorganizing components based on elements instead of pages)

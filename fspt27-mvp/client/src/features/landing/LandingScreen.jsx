@@ -14,7 +14,7 @@ function LandingScreen() {
         <div id='landing'>
             <img id="logo" src='/src/assets/logo-cozygarden.webp' />
             <nav>
-                <button><Link to="/overview">Start Game</Link></button>
+                <Link to="/overview"><button>Start Game</button></Link>
                 <button onClick={openAboutModal}>About</button>
             </nav>
                 <Modal isOpen={isAboutOpen} onClose={closeAboutModal}>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./index.css";
+import "./pokedex.css";
 
 function SinglePokemon({ pokemon, onOverviewClick }) {
 
@@ -53,7 +53,7 @@ function SinglePokemon({ pokemon, onOverviewClick }) {
 
     return (
       <div id="single-pokemon">
-        <div className="index-subheader">
+        <div className="pokedex-subheader">
           <h2>{pokemon.id} | {pokemon.name}</h2>
           <button onClick={onOverviewClick}>Close</button>
         </div>

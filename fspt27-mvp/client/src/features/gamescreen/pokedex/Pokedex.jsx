@@ -3,7 +3,7 @@ import SinglePokemon from "./SinglePokemon";
 import PokemonList from "./PokemonList";
 import Menu from "../../../components/Menu";
 import axios from "axios";
-import "./index.css";
+import "./pokedex.css";
 
 function Index() {
     const [selectedPokemon, setSelectedPokemon] = useState(null);

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import "./index.css";
+import "./pokedex.css";
 
 function PokemonList({fetchSinglePokemonCb, pokemonList}){
 
 return(
     <div id="pokemon-list">
-        <div className="index-subheader">
+        <div className="pokedex-subheader">
             <h2>Pokémon List</h2>
             <Link to="/overview"><button>Back</button></Link>
         </div>

@@ -28,8 +28,11 @@ function Menu() {
             <li className={isActive('/overview') ? 'inactive' : ''}>
                 <Link to="/overview">Home</Link>
               </li>
-              <li className={isActive('/index') ? 'inactive' : ''}>
-                <Link to="/index">Index</Link>
+              <li className={isActive('/pokedex') ? 'inactive' : ''}>
+                <Link to="/pokedex">Pokedex</Link>
+              </li>
+              <li className={isActive('/catch') ? 'inactive' : ''}>
+                <Link to="/catchlanding">Catch Pokémon</Link>
               </li>
             </ul>
           </div>
