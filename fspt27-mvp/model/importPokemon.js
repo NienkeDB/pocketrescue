@@ -31,17 +31,19 @@ con.connect(async function(err) {
       if (types.includes('grass')) {
         return {
           id: pokemonData.data.id,
-          name: pokemonData.data.name
+          name: pokemonData.data.name,
+          img: pokemonData.data.sprites.front_default
         };
       }
     }));
+    console.log(detailedPokemon)
 
     // Filter de undefined waarden die niet grasstype zijn
     const grassPokemon = detailedPokemon.filter(p => p !== undefined);
 
     // Bereid de SQL query en de waarden voor
-    const sqlInsert = 'INSERT INTO pokemon (pokemon_id, name) VALUES ? ON DUPLICATE KEY UPDATE name = VALUES(name)';
-    const values = grassPokemon.map(p => [p.id, p.name]);
+    const sqlInsert = 'INSERT INTO pokemon (pokemon_id, name, img) VALUES ? ON DUPLICATE KEY UPDATE img = VALUES(img)';
+    const values = grassPokemon.map(p => [p.id, p.name, p.img]);
 
     // Voer de query uit
     con.query(sqlInsert, [values], function(err, result) {

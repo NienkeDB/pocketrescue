@@ -4,7 +4,7 @@ import RandomPokemon from "../../../components/RandomPokemon";
 import Menu from "../../../components/Menu";
 import Modal from "../../../components/Modal";
 import axios from "axios";
-// import "./AdoptPokemon.css";
+import "./AdoptPokemon.css";
 
 function AdoptPokemon() {
   const [randomPokemon, setRandomPokemon] = useState(0);
@@ -26,6 +26,7 @@ function AdoptPokemon() {
       const response = await axios.put(`/api/cozygarden/${pokemon_id}?action=decrease`);
       if (response.status === 200) {
         const data = response.data;
+        console.log('updateStorage | This Pokémons storage has been decreased', data[0])
       } else {
         console.log(`Server Error: ${response.status}, ${response.statusText}`);
         console.log("Server Error Message:", response.data.error);
@@ -43,7 +44,7 @@ function AdoptPokemon() {
   }
 
     const fromStorage = () => {
-        //put request for updating store -1
+        //put request for updating storage -1
           updateStorage(randomPokemon.pokemon_id);
       }
 
@@ -52,27 +53,45 @@ function AdoptPokemon() {
     }
 
     return (
+      <>
     <div id='adopt-pokemon'>
-      <Menu />
-      <h2>Adopt Pokémon</h2>
       <RandomPokemon onRandomPokemon={handleRandomPokemon} />
-      <p>A customer is looking to adopt a {randomPokemon.name}</p>
-      {randomPokemon.storage === 0 ? 
-      <>
-      <p>Unfortunately there are no {randomPokemon.name} available for adoption. Try <Link to="/catchlanding">catching</Link> one!</p>
-      <button onClick={nextCustomer}>Try next customer</button>
-      </>
-      : 
-      <>
-      <p>You currently have {randomPokemon.storage} {randomPokemon.name} available for adoption.</p>
-      <button onClick={() => { openAdoptModal(); fromStorage(); }}>Give {randomPokemon.name} its new home</button>
-      </>
-      }
-      <Modal isOpen={isAdoptOpen} onClose={closeAdoptModal}>
-        <h4>{randomPokemon.name} has a new home!</h4>
-          <p>You have succesfully rehomed yet another Pokémon, well done!</p>
-        </Modal>      
+      <div id='adopt-header'>
+        <h2>Rehome a pokemon</h2>
+        <button onClick={() => navigate(-1)}>x</button>
       </div>
+      {randomPokemon.storage === 0 ? 
+      <div id='adopt-wrap'>
+        <div id='intro'>
+        <img src={randomPokemon.img} />
+        <p>A customer is looking to adopt {randomPokemon.name}. <br />
+        Unfortunately there are no {randomPokemon.name} available for adoption. 
+        Try rescueing one!</p>
+        </div>
+          <div id='adopt-buttons'>
+            <Link to="/catchlanding"><button>Rescue pokemon</button></Link>
+            <button onClick={nextCustomer}>Try next customer</button>
+          </div>
+      </div>
+        : 
+      <div id='adopt-wrap'>
+        <div id='intro'>
+        <img src={randomPokemon.img} />
+        <p>A customer is looking to adopt {randomPokemon.name}. <br />
+        Luckily you currently have {randomPokemon.storage} {randomPokemon.name} available for adoption.</p>
+        </div>
+        <button onClick={() => { openAdoptModal(); fromStorage(); }}>Give {randomPokemon.name} its new home</button>
+      </div>
+      }        
+      <Modal isOpen={isAdoptOpen} onClose={closeAdoptModal}>
+        <div id="adopt-modal">
+          <h2>{randomPokemon.name} has a new home!</h2>
+          <p>You have succesfully rehomed yet another Pokemon, well done!</p>
+        </div>
+        </Modal> 
+    </div>
+   <Menu />     
+</>
     );
   }
   

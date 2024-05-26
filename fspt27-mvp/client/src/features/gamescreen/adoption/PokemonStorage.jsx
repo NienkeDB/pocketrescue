@@ -1,12 +1,23 @@
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Menu from "../../../components/Menu";
+import Modal from "../../../components/Modal";
+import SinglePokemon from "../pokedex/SinglePokemon";
 import "./PokemonStorage.css";
 
 function PokemonStorage() {
-
     const [pokemonList, setPokemonList] = useState([]);
+    const navigate = useNavigate();
+    const [selectedPokemonId, setSelectedPokemonId] = useState(null);
+    const [isAboutOpen, setAboutOpen] = useState(false);
+
+    const closeAboutModal = () => setAboutOpen(false);
+
+    function openAboutModal(pokemon_id) {
+      setSelectedPokemonId(pokemon_id);
+      setAboutOpen(true);
+    }
 
     useEffect(() => {
       fetchStoragePokemon();
@@ -29,22 +40,26 @@ function PokemonStorage() {
       }
     }
 
-  
     return (
-    <div id='pokemon-storage'>
-        <Menu />
-        <div className="storage-subheader">
-          <h2>Pokemon Storage</h2>
-          <Link to="/overview"><button>Back</button></Link>
-        </div>
-        <div id='pokedex'>
-        {pokemonList.filter(pokemon => pokemon.storage !== 0).map((pokemon, index) => (
-            <ul className='pokemon' key={index}>
-                <li>{pokemon.pokemon_id} | {pokemon.name} | In storage {pokemon.storage}</li>
-            </ul>
+      <>
+        <div id='pokemon-storage'>
+          <div id='storage-wrap'>
+            <h2>Adoption Center</h2>
+            <button onClick={() => navigate(-1)}>x</button>
+          </div>
+          <ul className='pokemon'>
+            {pokemonList.filter(pokemon => pokemon.storage !== 0).map((p, index) => (
+              <li onClick={() => openAboutModal(p.pokemon_id)} data-id={p.pokemon_id} data-storage={p.storage} key={index}>
+                <img src={p.img} />
+              </li>
             ))}
+          </ul>
       </div>
-    </div>
+      <Modal isOpen={isAboutOpen} onClose={closeAboutModal}>
+          <SinglePokemon pokemon_id={selectedPokemonId}/>
+      </Modal>
+      <Menu />
+    </>
     );
   }
   

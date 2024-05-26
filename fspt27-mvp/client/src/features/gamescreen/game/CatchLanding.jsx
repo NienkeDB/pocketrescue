@@ -1,28 +1,28 @@
 import { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Catch from "./Catch";
 import axios from "axios";
 import Modal from "../../../components/Modal";
 import RandomPokemon from "../../../components/RandomPokemon"
-// import "./CatchLanding.css";
+import Menu from "../../../components/Menu";
+import "./CatchLanding.css";
 
 function CatchLanding() {
-    const [isCatchOpen, setCatchopen] = useState(false);
-    const [randomPokemon, setRandomPokemon] = useState(0);
-    const navigate = useNavigate();
+  const [isCatchOpen, setCatchopen] = useState(false);
+  const [randomPokemon, setRandomPokemon] = useState(0);
+  const navigate = useNavigate();
 
-    const openCatchModal = () => setCatchopen(true);
-    const closeCatchModal = () => setCatchopen(false);
+  const openCatchModal = () => setCatchopen(true);
+  const closeCatchModal = () => setCatchopen(false);
 
-  const handleRandomPokemon = (pokemon) => {
-    setRandomPokemon(pokemon);
-  }
+  const handleRandomPokemon = (pokemon) => {setRandomPokemon(pokemon);}
 
   async function updateStorage(pokemon_id) {
     try {
       const response = await axios.put(`/api/cozygarden/${pokemon_id}?action=increase`);
       if (response.status === 200) {
         const data = response.data;
+        console.log(`updateStorage() | We have received the request from toStorage and increased this Pokémon:`, data[0])
       } else {
         console.log(`Server Error: ${response.status}, ${response.statusText}`);
         console.log("Server Error Message:", response.data.error);
@@ -41,20 +41,32 @@ function CatchLanding() {
 
     const toStorage = () => {
         //put request for updating store +1
-          updateStorage(randomPokemon.pokemon_id);
+          updateStorage(randomPokemon?.pokemon_id);
+          console.log(`toStorage() | We have a random Pokémon and we are iniating the updateStorage:`, randomPokemon)
       }
   
     return (
-    <div id='catch'>
-    <h2>Welcome to catch</h2>
-    <p>In this version of the game you can catch a Pokémon by pressing this button. A random Pokémon will show up. You can decide wether you want to adopt the Pokémon yourself and allowing it to roam in your own gardens or you can put it up for adoption by sending it to the Pokémon Storage.</p>
-          <button onClick={openCatchModal}>Catch Pokémon</button>
-          <button onClick={() => navigate(-1)}>Back</button>
-        <Modal isOpen={isCatchOpen} onCloseCb={closeCatchModal}>
-          <RandomPokemon onRandomPokemon={handleRandomPokemon} />
-          <Catch randomPokemon={randomPokemon} toStorageCb={toStorage}/>
-        </Modal>      
-    </div>
+      <>
+        <div id='catchlanding'>
+            <div id='catchlanding-header'>
+              <h2>Rescue a wild pokemon</h2>
+              <button onClick={() => navigate(-1)}>x</button>
+            </div>
+            <div id='catchlanding-wrap'>
+              <div id='intro'>
+                <img src="https://64.media.tumblr.com/59f1ea5d708eb9922424f115e97c873b/tumblr_nt1401NDiU1uzvqoio1_r1_540.gif" />
+                <p>Oh no! A wild pokemon was spotted in the forest nearby. It looks really upset. Try and catch it so it can find a warm, forever home.</p>
+              </div>
+              <button onClick={openCatchModal}>Catch Pokemon</button>
+              <button onClick={() => navigate(-1)}>Back</button>
+          </div>
+        </div>
+            <Modal isOpen={isCatchOpen} onClose={closeCatchModal}>
+              <RandomPokemon onRandomPokemon={handleRandomPokemon} />
+              {randomPokemon && <Catch randomPokemon={randomPokemon} toStorage={toStorage} />}
+            </Modal> 
+        <Menu />     
+      </> 
     );
   }
   

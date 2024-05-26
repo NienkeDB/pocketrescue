@@ -1,127 +1,59 @@
-.pokedex-subheader{
+#pokedex{
+  border:5px solid white;
+  border-radius:10px;
+  background-color:#D2635A;
+  padding:10px;
+  text-align:left;
+  margin-bottom:65px;
+}
+
+#pokedex-wrap{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: white;
-  text-transform:capitalize;
 }
 
-ul{
-  text-align:left;
+#pokedex h2{
+  margin:0px;
 }
 
-li{
-  list-style-type: none;
-  text-align:left;
+#pokedex img{
+  width:70px;
 }
 
-#pokemon-list li{
-  text-transform:capitalize;
+#pokedex ul{
+  display:flex;
+  flex-wrap: wrap;
 }
 
-#pokemon-list li:hover{
-  font-weight:bold;
+#pokedex li{
+  position: relative;
+  width:69px;
+  height:69px;
 }
 
-#single-pokemon img{
-  cursor:pointer;
+#pokedex li::before {
+  content: "#" attr(data-id); 
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 20px; 
+  height: 20px; 
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 15px; 
+  /* z-index:1; */
 }
 
-#single-pokemon li{
-  border-radius:20px;
-  display:inline-block;
-  margin: 5px;
-  padding:4px 18px;
-  color:#fff;
+#pokedex a span{
+  margin-left:5px;
 }
 
-#grass {
-  border: solid 1px #4e8234; /* Groen */
-  background-color: #9bcc50; /* Lichtgroen */
+#pokedex li:nth-child(even) {
+  background-color: #B87165; 
 }
 
-#normal {
-  border: solid 1px #a8a878; /* Grijs */
-  background-color: #c6c6a7; /* Lichtgrijs */
-}
-
-#fire {
-  border: solid 1px #f08030; /* Oranje */
-  background-color: #f5ac78; /* Lichtoranje */
-}
-
-#water {
-  border: solid 1px #6890f0; /* Blauw */
-  background-color: #9bb8d7; /* Lichtblauw */
-}
-
-#electric {
-  border: solid 1px #f8d030; /* Geel */
-  background-color: #f9d77c; /* Lichtgeel */
-}
-
-#ice {
-  border: solid 1px #98d8d8; /* Lichtblauw */
-  background-color: #bce6e6; /* IJsblauw */
-}
-
-#fighting {
-  border: solid 1px #c03028; /* Rood */
-  background-color: #d67873; /* Lichtrood */
-}
-
-#poison {
-  border: solid 1px #682a68; /* Paars */
-  background-color: #a040a0; /* Lichtpaars */
-}
-
-#ground {
-  border: solid 1px #e0c068; /* Bruin */
-  background-color: #ebd69d; /* Lichtbruin */
-}
-
-#flying {
-  border: solid 1px #a890f0; /* Paarsblauw */
-  background-color: #c9b8f5; /* Lichtpaarsblauw */
-}
-
-#psychic {
-  border: solid 1px #f85888; /* Roze */
-  background-color: #fa92b2; /* Lichtroze */
-}
-
-#bug {
-  border: solid 1px #a8b820; /* Groen */
-  background-color: #c6d16e; /* Lichtgroen */
-}
-
-#rock {
-  border: solid 1px #b8a038; /* Geelbruin */
-  background-color: #d1cc78; /* Lichtgeelbruin */
-}
-
-#ghost {
-  border: solid 1px #705898; /* Paars */
-  background-color: #a292bc; /* Lichtpaars */
-}
-
-#dragon {
-  border: solid 1px #7038f8; /* Donkerpaars */
-  background-color: #a27dff; /* Lichtpaars */
-}
-
-#dark {
-  border: solid 1px #705848; /* Donkergrijs */
-  background-color: #a29288; /* Lichtgrijs */
-}
-
-#steel {
-  border: solid 1px #b8b8d0; /* Grijsblauw */
-  background-color: #d1d1e0; /* Lichtgrijsblauw */
-}
-
-#fairy {
-  border: solid 1px #e79fe7; /* Roze */
-  background-color: #f5baff; /* Lichtroze */
+#pokedex li:nth-child(odd) {
+  background-color: #C78A84; 
 }

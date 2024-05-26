@@ -1,5 +1,5 @@
 import React from 'react';
-import './Modal.css'; // Stijlen voor de modal
+import './Modal.css';
 
 function Modal ({ isOpen, onClose, children }) {
     if (!isOpen) return null;
@@ -7,7 +7,7 @@ function Modal ({ isOpen, onClose, children }) {
     return (
         <div className="modal-overlay">
             <div className="modal-body">
-                <button onClick={onClose} className="modal-close">X</button>
+                <a onClick={onClose} className="modal-close">X</a>
                 {children}
             </div>
         </div>

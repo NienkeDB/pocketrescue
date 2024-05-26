@@ -1,0 +1,151 @@
+#pokemon-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+    text-align:justify;
+    font-size:15px;
+    margin-bottom:-10px;
+}
+
+#pokemon-header img{
+    background-image:url('../../../assets/grass.png');
+    background-size:cover;
+    width:100%;
+    height:100%;
+    image-rendering: pixelated;
+}
+
+#pokemon-header p{
+    padding:5px;
+    min-height:90px;
+}
+
+#single-pokemon #details{
+    font-size:15px;
+    display:flex;
+    justify-content: space-between;
+    background-color:#A64B46;
+}
+
+#single-pokemon #stats li{
+    text-align:left;
+    margin-left:10px;
+}
+
+#pokedata ul{
+    margin-top:20px;
+}
+
+#pokedata li{
+    text-align:left;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pokedata li span{
+    background-color:#C78A84;
+    padding:0px 8px;
+    margin:3px 0px;
+    text-align:center;
+    min-width:16px;
+    border:solid 1px;
+    border-color: #a66e69 #da9c97 #da9c97 #a66e69;
+}
+
+#single-pokemon #type li{
+    display:inline-block;
+    padding:0px 10px;
+    margin:10px;
+}
+
+#grass {
+    border: solid 1px #4e8234; /* Groen */
+    background-color: #9bcc50; /* Lichtgroen */
+  }
+  
+  #normal {
+    border: solid 1px #a8a878; /* Grijs */
+    background-color: #c6c6a7; /* Lichtgrijs */
+  }
+  
+  #fire {
+    border: solid 1px #f08030; /* Oranje */
+    background-color: #f5ac78; /* Lichtoranje */
+  }
+  
+  #water {
+    border: solid 1px #6890f0; /* Blauw */
+    background-color: #9bb8d7; /* Lichtblauw */
+  }
+  
+  #electric {
+    border: solid 1px #f8d030; /* Geel */
+    background-color: #f9d77c; /* Lichtgeel */
+  }
+  
+  #ice {
+    border: solid 1px #98d8d8; /* Lichtblauw */
+    background-color: #bce6e6; /* IJsblauw */
+  }
+  
+  #fighting {
+    border: solid 1px #c03028; /* Rood */
+    background-color: #d67873; /* Lichtrood */
+  }
+  
+  #poison {
+    border: solid 1px #682a68; /* Paars */
+    background-color: #a040a0; /* Lichtpaars */
+  }
+  
+  #ground {
+    border: solid 1px #e0c068; /* Bruin */
+    background-color: #ebd69d; /* Lichtbruin */
+  }
+  
+  #flying {
+    border: solid 1px #a890f0; /* Paarsblauw */
+    background-color: #c9b8f5; /* Lichtpaarsblauw */
+  }
+  
+  #psychic {
+    border: solid 1px #f85888; /* Roze */
+    background-color: #fa92b2; /* Lichtroze */
+  }
+  
+  #bug {
+    border: solid 1px #a8b820; /* Groen */
+    background-color: #c6d16e; /* Lichtgroen */
+  }
+  
+  #rock {
+    border: solid 1px #b8a038; /* Geelbruin */
+    background-color: #d1cc78; /* Lichtgeelbruin */
+  }
+  
+  #ghost {
+    border: solid 1px #705898; /* Paars */
+    background-color: #a292bc; /* Lichtpaars */
+  }
+  
+  #dragon {
+    border: solid 1px #7038f8; /* Donkerpaars */
+    background-color: #a27dff; /* Lichtpaars */
+  }
+  
+  #dark {
+    border: solid 1px #705848; /* Donkergrijs */
+    background-color: #a29288; /* Lichtgrijs */
+  }
+  
+  #steel {
+    border: solid 1px #b8b8d0; /* Grijsblauw */
+    background-color: #d1d1e0; /* Lichtgrijsblauw */
+  }
+  
+  #fairy {
+    border: solid 1px #e79fe7; /* Roze */
+    background-color: #f5baff; /* Lichtroze */
+  }

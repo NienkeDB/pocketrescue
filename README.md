@@ -30,9 +30,9 @@ A garden center (at least in the Netherlands) does have animals up for adoption 
 
 3. Adopting Pokémon<br />
     **Objective**<br />
-    Taking in requests from customers who want to adopt a Pokémon.
+    Taking in requests from customers who want to adopt a Pokémon.<br />
     **Mechanic**<br />
-    A random Pokémon is attached to the customer and it checks wether the 'storage' for that Pokémon !== 0. If available you can give away for adoption and the db gets updated, if not you can try again.
+    A random Pokémon is attached to the customer and it checks wether the 'storage' for that Pokémon !== 0. If available you can give away for adoption and the db gets updated, if not you can try again.<br /><br />
 
 4. Designing the app<br />
     After all the technical things are added, it is time to design the app accordingly.

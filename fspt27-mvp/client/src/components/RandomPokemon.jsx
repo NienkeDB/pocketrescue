@@ -1,6 +1,5 @@
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 import axios from 'axios';
-// import './RandomPokemon.css';
 
 function RandomPokemon ({onRandomPokemon}) {
 
@@ -12,6 +11,7 @@ function RandomPokemon ({onRandomPokemon}) {
         try {
           const response = await axios.get(`/api/cozygarden/random`)
           onRandomPokemon(response.data[0]);
+          console.log(`RandomPokemon.jsx | A random Pokémon is generated:`, response.data[0])
         } catch (error) {
           if(error.response){
             console.log(`Server Error: ${error.response.status}, ${error.response.statusText}`);

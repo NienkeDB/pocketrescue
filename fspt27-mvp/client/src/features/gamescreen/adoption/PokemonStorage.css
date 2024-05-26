@@ -1,4 +1,81 @@
-.storage-subheader{
+#pokemon-storage{
+  border:5px solid white;
+  border-radius:10px;
+  background-color:#D2635A;
+  padding:10px;
+  text-align:left;
+  min-height:87vh;
+  margin-bottom:65px;
+}
+
+#storage-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pokemon-storage h2{
+  margin:0px;
+}
+
+#pokemon-storage img{
+  width:70px;
+}
+
+#pokemon-storage ul{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+#pokemon-storage li {
+  position: relative;
+  width:69px;
+  height:69px;
+}
+
+#pokemon-storage li::before {
+  content: "#" attr(data-id); 
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 20px; 
+  height: 20px; 
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 15px; 
+  /* z-index:1; */
+}
+
+#pokemon-storage li::after {
+  content: attr(data-storage); 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px; 
+  height: 20px; 
+  background-color: yellow; 
+  border-radius: 3px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px; 
+}
+
+#pokemon-storage a span{
+  margin-left:5px;
+}
+
+#pokemon-storage li:nth-child(even) {
+  background-color: #B87165; 
+}
+
+#pokemon-storage li:nth-child(odd) {
+  background-color: #C78A84; 
+}
+
+/* .storage-subheader{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,4 +83,36 @@
     background: white;
     text-transform:capitalize;
   }
+
+  ul{
+    text-align:left;
+    margin-left:-40px;
+  }
   
+  #pokemon-storage li{
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+    border-bottom:4px solid black;
+    transition: background-color 0.3s ease;
+  }
+
+  #pokemon-storage li:first-child{
+    border-top: 4px solid black;
+  }
+  
+  #pokemon-storage li:nth-child(even) {
+    background-color: #f2f2f2; 
+  }
+  
+  #pokemon-storage li:nth-child(odd) {
+    background-color: #ffffff; 
+  }
+  
+  #pokemon-storage li:nth-child(even):hover {
+    background-color: #cccccc; 
+  }
+  
+  #pokemon-storage li:nth-child(odd):hover {
+    background-color: #e0e0e0; 
+  }
+   */

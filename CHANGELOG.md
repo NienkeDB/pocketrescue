@@ -1,4 +1,14 @@
 # Change Log
+* 26/05/2024
+    * Fixed issues with increasing and decreasing Pokémon when catching & adopting
+    * Added munro font from `https://www.fontsquirrel.com/fonts/Munro`
+    * Added styling
+    * Started cleaning the code
+
+* 21/05/2024
+    * Improved Router use after class instructions
+    * Updated SinglePokemon.jsx to work as a seperate component
+
 * 20/05/2024
     * Moved Random Pokemon function to separate component so it can be used in multiple components
     * Added 'adopt' function

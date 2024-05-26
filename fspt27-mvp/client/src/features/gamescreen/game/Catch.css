@@ -1,3 +1,17 @@
-#catch h2{
-    text-transform: capitalize;
+#catch-buttons button{
+    min-width:290px;
+  }
+
+  #catch-intro{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+    text-align:justify;
+    font-size:18px;
+    margin-bottom:-10px;
+}
+
+#catch-popup h2{
+    font-size:25px;
 }

@@ -1,0 +1,53 @@
+#adopt-pokemon{
+    border:5px solid white;
+    border-radius:10px;
+    background-color:#D2635A;
+    padding:10px;
+    min-height:80vh;
+  }
+
+  #adopt-header h2{
+    margin:0px;
+  }
+
+  #adopt-modal h2{
+    font-size:25px;
+  }
+
+  #adopt-wrap{
+    background-color:#C78A84;
+  }
+
+  #adopt-header, #adopt-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #adopt-buttons button{
+    margin:30px 12px;
+    font-size:18px;
+  }
+  
+  #intro{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:5px;
+    text-align:justify;
+    font-size:18px;
+    margin-bottom:-10px;
+}
+
+#intro img{
+    background-image:url('../../../assets/grass.png');
+    background-size:cover;
+    width:150px;
+    height:100%;
+    image-rendering: pixelated;
+}
+
+/* #intro p{
+    padding:5px;
+    min-height:90px;
+} */
