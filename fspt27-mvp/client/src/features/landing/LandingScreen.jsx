@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../../components/Modal';
-import About from './About';
 import './LandingScreen.css';
 
 function LandingScreen() {
-    const [isAboutOpen, setAboutOpen] = useState(false);
-
-    const openAboutModal = () => setAboutOpen(true);
-    const closeAboutModal = () => setAboutOpen(false);
 
     return (
         <div id='landing'>
-            <img id="logo" src='/src/assets/CG-logo.png' />
-            <h2></h2>
+            <img id="logo" src='/src/assets/pocketrescue.svg' />
+            <h2>Pocket<br />Rescue</h2>
             <nav>
-                <Link to="/overview"><button>Start Game</button></Link>
-                <button onClick={openAboutModal}>About</button>
+                <Link to="/rescuecenter"><button>Start game</button></Link>
             </nav>
-                <Modal isOpen={isAboutOpen} onClose={closeAboutModal}>
-                    <About />
-                </Modal>
         </div>
     );
 }

@@ -14,7 +14,7 @@ function AdoptPokemon() {
   const openAdoptModal = () => setAdoptopen(true);
   const closeAdoptModal = () => {
     setAdoptopen(false);
-    navigate('/overview');
+    navigate('/rescuecenter');
   }
 
   const handleRandomPokemon = (pokemon) => {
@@ -23,7 +23,7 @@ function AdoptPokemon() {
 
   async function updateStorage(pokemon_id) {
     try {
-      const response = await axios.put(`/api/cozygarden/${pokemon_id}?action=decrease`);
+      const response = await axios.put(`/api/pocketrescue/${pokemon_id}?action=decrease`);
       if (response.status === 200) {
         const data = response.data;
         console.log('updateStorage | This Pokémons storage has been decreased', data[0])

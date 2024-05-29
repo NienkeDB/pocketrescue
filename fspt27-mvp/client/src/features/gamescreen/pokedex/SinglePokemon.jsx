@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./pokedex.css";
 import axios from "axios";
 import './SinglePokemon.css'
 
@@ -43,7 +42,7 @@ function SinglePokemon({pokemon_id}) {
 
     async function getDbPokemon(){
       try {
-        const response = await axios.get(`/api/cozygarden/${pokemon_id}`)
+        const response = await axios.get(`/api/pocketrescue/${pokemon_id}`)
         setDbPokemon(response.data[0]);
         console.log(response.data[0])
       } catch (error) {

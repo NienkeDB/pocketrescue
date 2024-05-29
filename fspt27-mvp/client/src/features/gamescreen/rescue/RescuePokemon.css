@@ -1,4 +1,4 @@
-#adopt-pokemon{
+#rescuepokemon{
   border:5px solid white;
   border-radius:10px;
   background-color:#D2635A;
@@ -6,32 +6,23 @@
   min-height:80vh;
 }
 
-#adopt-pokemon button{
+#rescuepokemon button{
   margin-right:3px;
   margin-top:3px;
 }
 
-#adopt-header h2{
+#rescuepokemon h2{
   margin:0px;
 }
 
-#adopt-modal h2{
-  font-size:25px;
-}
-
-#adopt-wrap{
+#rescuepokemon-wrap{
   background-color:#C78A84;
 }
 
-#adopt-header, #adopt-buttons{
+#rescuepokemon-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-#adopt-buttons button{
-  margin:30px 12px;
-  font-size:18px;
 }
 
 #intro{
@@ -45,9 +36,12 @@
 }
 
 #intro img{
-  background-image:url('../../../assets/grass.png');
-  background-size:cover;
   width:150px;
   height:100%;
   image-rendering: pixelated;
+}
+
+#intro p{
+  padding:5px;
+  min-height:90px;
 }

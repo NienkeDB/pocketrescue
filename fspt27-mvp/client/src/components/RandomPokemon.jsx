@@ -9,7 +9,7 @@ function RandomPokemon ({onRandomPokemon}) {
     
     async function catchPokemon() {
         try {
-          const response = await axios.get(`/api/cozygarden/random`)
+          const response = await axios.get(`/api/pocketrescue/random`)
           onRandomPokemon(response.data[0]);
           console.log(`RandomPokemon.jsx | A random Pokémon is generated:`, response.data[0])
         } catch (error) {

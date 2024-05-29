@@ -1,4 +1,15 @@
 # Change Log
+* 29/05/2024
+    * Implemented feature to display all caught pokemon in `overview.jsx`
+    * Updated `README.md`
+    * Added icons for buttons
+    * Changed db name from Cozy Garden to Pocket Rescue
+    * Updated landing screen & ico
+    * Merged Pokedex & Adoption Overview file and added a filter and search funcionality to `pokedex.js`
+    * Implemented one time tutorial screen that introduces the buttons
+    * Updated active buttons to not clickable
+    * Cleaning and reorganizing all code
+
 * 26/05/2024
     * Fixed issues with increasing and decreasing Pokémon when catching & adopting
     * Added munro font from `https://www.fontsquirrel.com/fonts/Munro`

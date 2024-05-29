@@ -3,11 +3,11 @@ var router = express.Router();
 const db = require("../model/helper")
 
 router.get('/', function(req, res, next) {
-  res.send('Welcome to the Cozy Garden API');
+  res.send('Welcome to the Pocket Rescue API');
 });
 
 //Send back full list of Pokémon
-router.get("/cozygarden", (req, res) => {
+router.get("/pocketrescue", (req, res) => {
   db("SELECT * FROM pokemon;")
     .then(results => {
       res.send(results.data);
@@ -16,7 +16,7 @@ router.get("/cozygarden", (req, res) => {
 });
 
 //Send back 1 random Pokémon
-router.get('/cozygarden/random', async (req, res) => {
+router.get('/pocketrescue/random', async (req, res) => {
     try {
       const result = await db(
         `SELECT * FROM pokemon ORDER BY RAND() LIMIT 1;`
@@ -35,7 +35,7 @@ router.get('/cozygarden/random', async (req, res) => {
   });
 
 //Send back a single Pokémon
-router.get('/cozygarden/:pokemon_id', async (req, res) => {
+router.get('/pocketrescue/:pokemon_id', async (req, res) => {
   try {
     const result = await db(
       `SELECT * FROM pokemon WHERE pokemon_id = ${+req.params.pokemon_id}`
@@ -53,8 +53,8 @@ router.get('/cozygarden/:pokemon_id', async (req, res) => {
   }
 });
 
-//Update storage and caught single Pokémon
-router.put("/cozygarden/:pokemon_id", async (req, res) => {
+//Update storage (available for adoption) and caught (rescued) single Pokémon
+router.put("/pocketrescue/:pokemon_id", async (req, res) => {
   try {
         const action = req.query.action;
         const result = await db(

@@ -58,6 +58,10 @@ li{
   list-style-type: none;
 }
 
+input, select, option{
+  font-family:'Munro';
+}
+
 body {
   margin: 0;
   display: flex;
@@ -65,7 +69,6 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overscroll-behavior-y: none;
-
 }
 
 h1 {
@@ -83,8 +86,7 @@ button{
   border-image-outset: 2;
   position: relative;
   display: inline-block;
-  padding: 6px 8px;
-  margin: 4px;
+  padding: 4px 8px;
   text-align: center;
   vertical-align: middle;
   cursor: url('./assets/pointer.png'), pointer;
@@ -113,6 +115,20 @@ button::after{
   left: -4px;
   content: "";
   box-shadow: inset -4px -4px #adafbc;
+}
+
+.active button{
+  background-color:#ccc;
+}
+
+.active button::after{
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset 4px 4px #adafbc;
 }
 
 button:focus,

@@ -1,0 +1,22 @@
+#settings ul{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    align-items: center;
+}
+
+#settings img{
+    width:35px;
+}
+
+#settings h3, #settings h5{
+    margin-bottom:0px;
+}
+
+#settings p{
+    margin-top:0px;
+}
+
+#quit{
+    text-align:left;
+}

@@ -1,0 +1,50 @@
+#overview nav{
+    display:flex;
+    flex-direction: column;
+}
+
+#overview nav button{
+    margin-bottom:10px;
+}
+
+.pokemon-container {
+    position: relative;
+    width: 1300px;
+    height: 100%; 
+    background-image: url('../../assets/bg_green.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  #pokemon-floor{
+    height:50vh;
+    width:100%;
+    position:relative;
+  }
+  
+  .pokemon-container img{
+    width:20%;
+    image-rendering: pixelated;
+    position:absolute;
+  }
+
+  #intro-modal li{
+    display:flex;
+    justify-content: space-evenly;
+    text-align:left;
+    gap:10px;
+    padding:10px 0px;
+    border-bottom:solid white 3px;
+  }
+
+  #intro-modal img{
+    width:40px;
+    height:40px;
+    margin-top:8px;
+  }
+

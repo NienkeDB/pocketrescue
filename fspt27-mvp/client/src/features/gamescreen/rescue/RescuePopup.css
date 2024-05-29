@@ -1,8 +1,8 @@
-#catch-buttons button{
+#rescue-buttons button{
     min-width:290px;
   }
 
-  #catch-intro{
+  #rescue-intro{
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +12,6 @@
     margin-bottom:-10px;
 }
 
-#catch-popup h2{
+#rescue-popup h2{
     font-size:25px;
 }
