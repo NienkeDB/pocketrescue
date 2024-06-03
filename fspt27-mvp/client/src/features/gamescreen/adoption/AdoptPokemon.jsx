@@ -66,10 +66,10 @@ function AdoptPokemon() {
         <img src={randomPokemon.img} />
         <p>A customer is looking to adopt {randomPokemon.name}. <br />
         Unfortunately there are no {randomPokemon.name} available for adoption. 
-        Try rescueing one!</p>
+        Try rescuing one!</p>
         </div>
           <div id='adopt-buttons'>
-            <Link to="/catchlanding"><button>Rescue pokemon</button></Link>
+            <Link to="/rescue"><button>Rescue pokemon</button></Link>
             <button onClick={nextCustomer}>Try next customer</button>
           </div>
       </div>

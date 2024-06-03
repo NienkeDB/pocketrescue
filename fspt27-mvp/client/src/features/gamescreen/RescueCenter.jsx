@@ -21,14 +21,14 @@ function RescueCenter() {
   }
 
   const closeIntroOpen = () => {
-    localStorage.setItem('seenIntro', true);
+    localStorage.setItem('seenIntro', true); 
     setIntroOpen(false)
   };
   
   useEffect(() => {
     getStoragePokemon();
     let returningUser = localStorage.getItem('seenIntro');
-    setIntroOpen(!returningUser);
+    setIntroOpen(!returningUser); //Set to true to see the introscreen every single time
   }, [])
 
   async function getStoragePokemon(){

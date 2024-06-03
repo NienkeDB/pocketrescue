@@ -14,7 +14,7 @@ Looking at the timeline of only 2 weeks the main focus while building is as foll
     **Mechanic**<br />
     You can view the index of all Pokémon which are extracted from the pokeapi. You are also able to click on a Pokémon to view the details.<br /><br />
 
-2. Updating your inventory & Rescueing Pokémon<br />
+2. Updating your inventory & Rescuing Pokémon<br />
     **Objective**<br />
     Seeing which Pokémon you have rescued and which (and how many) are still available for adoption. <br /><br />
 
@@ -33,8 +33,8 @@ Looking at the timeline of only 2 weeks the main focus while building is as foll
     
 
 # Future opportunities
-    * Implement a game feature for the rescueing of Pokemon - e.g. based on snake or battlefield
-    * Implement a gamification element like earning awards or coins - e.g. first rescue, first adoption, 10th adoption, 10th rescueing of a specific pokemon
+    * Implement a game feature for the rescuing of Pokemon - e.g. based on snake or battlefield
+    * Implement a gamification element like earning awards or coins - e.g. first rescue, first adoption, 10th adoption, 10th rescuing of a specific pokemon
     * Include other Pokemon types
     * Upgrade the Adoption View screen - e.g. animate it; give each pokemon its own space (like a zoo)
     * Make a puzzle game of rehoming - similar to gameplay of Strange Horticulture (customer describes certain features of a pokemon and you have to try and figure out which pokemon they need)
