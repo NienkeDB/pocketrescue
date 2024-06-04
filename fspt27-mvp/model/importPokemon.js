@@ -40,7 +40,7 @@ con.connect(async function(err) {
     const grassPokemon = detailedPokemon.filter(p => p !== undefined);
 
     const sqlInsert = 'INSERT INTO pokemon (pokemon_id, name, img) VALUES ?';
-    const values = grassPokemon.map(p => [p.id, p.name, p.img]);
+    const values = grassPokemon.filter(p => p && p.id && p.name && p.img).map(p => [p.id, p.name, p.img]);
 
     con.query(sqlInsert, [values], function(err, result) {
       if (err) throw err;
