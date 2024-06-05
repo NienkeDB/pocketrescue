@@ -4,6 +4,14 @@ An MVP project for CodeOp's FSPT27. In this repository you'll find a full stack 
 # About
 You are the owner of a rescue center for wild Pokémon. You can collect grass-type pokémon, handle adoption requests and rescue Pokémon to rehome them via your center.
 
+## Setup
+
+### Dependencies
+
+Run `npm install` in the project folder to install dependencies related to Express (the server).
+
+`cd client` and run `npm install` install dependencies related to React (the client).
+
 ## Database Prep
 
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
