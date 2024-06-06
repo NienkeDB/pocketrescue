@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingScreen from './features/landing/LandingScreen';
+import Login from './features/gamescreen/Login';
 import RescueCenter from './features/gamescreen/RescueCenter';
 import RescuePokemon from './features/gamescreen/rescue/RescuePokemon';
 import Pokedex from './features/gamescreen/pokedex/Pokedex'
@@ -11,6 +12,7 @@ import './App.css';
 function App() {
   return (
       <Routes>
+        <Route path="/login" element={<Login />}/>
         <Route path="/" element={<LandingScreen />} />
         <Route path="/rescuecenter" element={<RescueCenter />} />
         <Route path="/pokedex" element={<Pokedex />} />
