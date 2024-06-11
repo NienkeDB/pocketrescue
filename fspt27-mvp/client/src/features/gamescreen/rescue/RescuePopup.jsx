@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "./RescuePopup.css";
+import PokemonQuiz from './PokemonQuiz';
+
 
 function RescuePopup({randomPokemon, toStorage}) {
-
   const nextRescue = () => {
     window.location.reload();
   }
@@ -24,6 +25,7 @@ function RescuePopup({randomPokemon, toStorage}) {
         <button onClick={nextRescue}>Next rescue mission</button>
         <Link to="/rescuecenter"><button>Visit adoption center</button></Link>
       </div>
+        <PokemonQuiz/>
     </div>
     );
   }
