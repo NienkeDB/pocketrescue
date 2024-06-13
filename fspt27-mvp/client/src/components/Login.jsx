@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import './loginandsignup.css'
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -8,6 +10,7 @@ function Login() {
   });
 
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,10 +20,11 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/login", credentials);
-      localStorage.setItem("token", response.data.token);
+      const response = await axios.post('/api/auth/login', credentials);
+      localStorage.setItem('token', response.data.token);
       console.log(response.data.message, response.data.token);
-      setErrorMessage("");
+      setErrorMessage('');
+      navigate('/landing');
     } catch (error) {
       console.log(error.response.data.message);
       setErrorMessage(error.response.data.message);
@@ -51,10 +55,9 @@ function Login() {
           value={credentials.password}
           onChange={handleChange}
         />
-      </div>
-      <button type="login" className="btn btn-primary btn-block">Login</button>
+       </div>
+      <button type="login" className="btn btn-login">Login</button>
       {errorMessage && <div className="text-danger">{errorMessage}</div>}
-      <button type="Sign-up" className="btn btn-primary btn-block">Sign up</button>
     </form>
   );
 };

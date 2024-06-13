@@ -14,10 +14,9 @@ import './App.css';
 function App() {
   return (
     <Routes>
-    <Route path="/" element={<Login />} />
+    <Route path="/" element={<LandingScreen />} />
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
-    <Route path="/landing" element={<LandingScreen />} />
     <Route path="/rescuecenter" element={<RescueCenter />} />
     <Route path="/pokedex" element={<Pokedex />} />
     <Route path="/rescue" element={<RescuePokemon />} />
