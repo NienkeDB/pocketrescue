@@ -41,5 +41,4 @@ function LandingScreen() {
     );
 }
 
-
 export default LandingScreen;

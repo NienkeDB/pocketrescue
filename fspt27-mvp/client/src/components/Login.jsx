@@ -22,11 +22,9 @@ function Login() {
     try {
       const response = await axios.post('/api/auth/login', credentials);
       localStorage.setItem('token', response.data.token);
-      console.log(response.data.message, response.data.token);
       setErrorMessage('');
-      navigate('/landing');
+      onLogin();  
     } catch (error) {
-      console.log(error.response.data.message);
       setErrorMessage(error.response.data.message);
     }
   };
@@ -43,6 +41,8 @@ function Login() {
           name="username"
           value={credentials.username}
           onChange={handleChange}
+          autoComplete="username"
+
         />
       </div>
       <div className="form-element">
@@ -54,8 +54,10 @@ function Login() {
           name="password"
           value={credentials.password}
           onChange={handleChange}
+          autoComplete="current-password"
+
         />
-       </div>
+      </div>
       <button type="login" className="btn btn-login">Login</button>
       {errorMessage && <div className="text-danger">{errorMessage}</div>}
     </form>

@@ -20,14 +20,13 @@ function SignUp({ onSignUp }) {
     e.preventDefault();
     try {
       const response = await axios.post('/api/auth/register', credentials);
-      console.log(response.data.message); 
       setErrorMessage('');
       onSignUp(); 
     } catch (error) {
-      console.log(error.response.data.message);  
       setErrorMessage(error.response.data.message || 'Signup failed');  
     }
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -41,6 +40,8 @@ function SignUp({ onSignUp }) {
           name="username"
           value={credentials.username}
           onChange={handleChange}
+          autoComplete="username"
+
         />
       </div>
       <div className="form-group">
@@ -52,6 +53,8 @@ function SignUp({ onSignUp }) {
           name="password"
           value={credentials.password}
           onChange={handleChange}
+          autoComplete="new-password"
+
         />
       </div>
       <div className="button-group">
